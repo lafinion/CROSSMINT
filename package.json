@@ -1,0 +1,36 @@
+{
+  "name": "crossmint-challenge",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "prepare:env": "cp .env.local.example .env.local && npm ci",
+    "cli": "ts-node test/scripts/cli.ts",
+    "phase1": "npm run cli -- phase1 --concurrency=2",
+    "phase2": "npm run cli -- phase2 --concurrency=2",
+    "validate": "npm run cli -- validate",
+    "test:all": "jest --passWithNoTests",
+    "test:unit": "jest test/scenario/unit --passWithNoTests",
+    "test:api": "jest test/scenario/api --passWithNoTests",
+    "test:integration": "jest test/scenario/integration --passWithNoTests",
+    "test:services": "jest test/scenario/services --passWithNoTests",
+    "lint": "eslint . --ext .ts"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.0.0",
+    "@types/node": "^20.0.0",
+    "jest": "^29.0.0",
+    "ts-jest": "^29.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.0",
+    "eslint": "^8.50.0",
+    "@typescript-eslint/parser": "^6.2.0",
+    "@typescript-eslint/eslint-plugin": "^6.2.0"
+  },
+  "dependencies": {
+    "got": "^12.0.0",
+    "p-limit": "^4.0.0",
+    "dotenv": "^16.0.0"
+  }
+}
+
+
